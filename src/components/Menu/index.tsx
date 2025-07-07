@@ -8,6 +8,7 @@ import {
 
 import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
+import { RouterLink } from '../RouterLink';
 type AvailableThemes = 'dark' | 'light';
 export function Menu() {
   const [theme, setTheme] = useState<AvailableThemes>(() => {
@@ -31,30 +32,30 @@ export function Menu() {
   localStorage.setItem('theme', theme);
   return (
     <nav className={styles.menu}>
-      <a
+      <RouterLink
         className={styles.menuLink}
-        href="#"
+        href="/"
         aria-label="Ir para a página inicial"
         title="Ir para a página inicial"
       >
         <HouseIcon />
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         className={styles.menuLink}
-        href="#"
+        href="/history/"
         aria-label="Ver histórico"
         title="Ver histórico"
       >
         <HistoryIcon />
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         className={styles.menuLink}
-        href="#"
+        href="/settings/"
         aria-label="Configurações"
         title="Configurações"
       >
         <SettingsIcon />
-      </a>
+      </RouterLink>
       <a
         className={styles.menuLink}
         href="#"
